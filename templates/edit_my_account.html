@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    Edit My Account
+{%endblock%}
+
+{%block breadcrumb%}
+<li class="breadcrumb-item "><a href="{% url 'boards'%}">Home</a></li>
+    <li class="breadcrumb-item active">Edit My Account</li>
+{%endblock%}
+
+{%block content%}
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {%include 'includes/form.html'%}
+        <br>
+        <button type="submit" class="btn btn-success">Update</button>
+    </form> 
+{%endblock%}
